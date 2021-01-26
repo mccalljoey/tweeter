@@ -1,0 +1,14 @@
+.mainheader {
+  height: 400px; 
+  background-color: #7038A1;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.mainheader span {
+  font-family: "Source Sans Pro";
+}
