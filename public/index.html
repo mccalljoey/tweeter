@@ -14,6 +14,8 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -40,18 +42,37 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container c2">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <div id="error">
-        </div>
-        <form id="tweetform" action="/tweets/" method="POST">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="formtweeterboxcounter">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+      <main class="container c2">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <div id="error">
           </div>
-        </form>
-      </section>
-    <main class="container"></main>
-  </body>
+          <form id="tweetform" action="/tweets/" method="POST">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <div class="formtweeterboxcounter">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section id="tweets-container">
+          <article class="tweet">
+            <header class="tweet-header">
+              <img src="/images/profile-hex.png">
+              <h2 class="name">Example User</h2>
+              <span class="handle">Example @</span>
+            </header>
+            <div class="content">TWEET TWEET</div>
+            <footer class="tweet-footer">
+              <span class="timestamp">TIME</span>
+              <span class="icons">
+                <i class="fa fa-flag" aria-hidden="true"></i>&nbsp
+                <i class="fa fa-retweet" aria-hidden="true"></i>&nbsp
+                <i class="fa fa-heart" aria-hidden="true"></i>&nbsp
+              </span>
+            </footer>
+          </article>
+        </section>
+      </main>
+    </body>
 </html>
