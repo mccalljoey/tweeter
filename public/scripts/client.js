@@ -11,7 +11,7 @@ function renderTweets(data) {
     let $tweet = createTweetElement(tweet)
     $container.prepend($tweet)
   })
-}
+};
 
 function createTweetElement(tweet) {
   let content = tweet.content.text
