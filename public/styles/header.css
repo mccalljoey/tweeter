@@ -12,3 +12,26 @@
 .mainheader span {
   font-family: "Source Sans Pro";
 }
+
+/* Phones */
+@media (min-width : 480px) {
+  .c1 {
+    width: 25%;
+    position: absolute;
+  }
+  .c2 {
+    margin-top: 0;
+    width: 75%;
+    margin-left: 25%;
+  }
+}
+
+/* Small Devices and Tablets */
+@media (min-width : 768px) {
+
+}
+
+/* Computers */
+@media (min-width : 1024px) {
+
+}

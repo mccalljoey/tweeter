@@ -11,7 +11,13 @@ function renderTweets(data) {
     let $tweet = createTweetElement(tweet)
     $container.prepend($tweet)
   })
-};
+}
+
+function timeStamp(data) {
+let curTime = new Date();
+let pastTime = new Date(data);
+return curTime.getDate() - pastTime.getDate();
+}
 
 function createTweetElement(tweet) {
   let content = tweet.content.text
@@ -46,29 +52,27 @@ function createTweetElement(tweet) {
   })
  };
 
- $(document).ready(function(){
-  loadTweets();
-  $("#tweetform").submit(function(event) {
-    event.preventDefault();
-    let form = $(this);
-    let url = form.attr("action");
-    let content = $("#tweet-text").val() 
-    if (content.length === 0) {
-      $("#error").text("Lack of Character");
-      $("#error").slideDown();
-      return
-    }
-    if (content.length > 140) {
-      $("#error").text("Character Count Exceeded");
-      $("#error").slideDown();
-      return
-    } 
-    $.ajax({type: "POST", url: url, data: form.serialize()})
-    .then(function(data) {
-      console.log(data);
-      location.reload();
+  $(document).ready(function(){
+    loadTweets();
+    $("#tweetform").submit(function(event) {
+      event.preventDefault();
+      let form = $(this);
+      let url = form.attr("action");
+      let content = $("#tweet-text").val() 
+      if (content.length === 0) {
+        $("#error").text("NO CHARACTERS BUDDY");
+        $("#error").slideDown();
+        return
+      }
+      if (content.length > 140) {
+        $("#error").text("TOO MANY CHARACTERS BUDDY");
+        $("#error").slideDown();
+        return
+      } 
+      $.ajax({type: "POST", url: url, data: form.serialize()})
+      .then(function(data) {
+        console.log(data);
+        location.reload();
+      })
     })
-  })
-});
-
-
+  });
